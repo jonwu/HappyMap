@@ -1,0 +1,156 @@
+.question{
+
+}
+#ask{
+    color: darkgray;
+    padding-top:15px;
+    padding-left: 15px;
+    left: 21%;
+    top: 19%;
+    position: fixed;
+    font-size: 100px;
+    width: 500px;
+    color: #519ede;
+
+
+}
+#search{
+    border:0px;
+    width: 150px;
+    height: 40px;
+    left: 36.5%;
+    top: 48%;
+    font-weight: 900px;
+    font-size:17px;
+    background-color:transparent; /*important*/
+    position: fixed;
+    outline:none;
+    color: white;
+
+    z-index: 1;
+}
+#searchbar{
+    width: 150px;
+    height: 40px;
+    left: 600px;
+    top: 48%;
+    position: fixed;
+}
+#search_enter{
+    left: 720px;
+    top: 49.5%;
+    position: fixed;
+}
+
+body{
+    background: #e3fff6;
+    overflow: auto;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+.emotion{
+
+}
+.emotion a{
+
+
+    width: 90px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: 900px;
+    font-size: 18px;
+
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    background-color: #519ede;
+
+    box-shadow:
+        0 0 0 2px white,
+        0 0 0 3px #519ede;
+
+
+    border-radius: 50%;
+    display: none;
+
+    top: 50%;
+    left: 45%;
+    position: fixed;
+    z-index: 1;
+
+}
+
+#hoverdiv {
+    /*display: none;*/
+    padding-left: 20px;
+    max-width:200px;
+    opacity: 0;
+    left: 45%;
+    top: 50%;
+    position: absolute;
+    font-size: 14px;
+    background-color: white;
+    color: gray;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px dotted gray;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 20px;
+
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+.line a{
+    position: absolute;
+    top:5px;
+    left:0px;
+    width: 0px;
+    height: 1px;
+    background: white;
+    z-index: 0;
+    box-shadow:
+        0 0 0 .5px white,
+        0 0 0 1px #519ede;
+
+    opacity: .5;
+
+}
+#tempBubble{
+
+    position: absolute;
+}
+.sidebar{
+    padding: 20px;
+    top: 35%;
+    position: fixed;
+    border-right: #519ede solid 1px;
+}
+.sidebar li{
+    list-style-type: none;
+    width:50px;
+    text-align: center;
+}
+.sidebar li a{
+    text-decoration: none;
+    list-style-type: none;
+}
+#leadsTo{
+    top: 51.6%;
+    left: 53%;
+    position: fixed;
+    display: none;
+    font-size: 30px;
+    opacity: .3;
+}
+#comesFrom{
+    top: 51.6%;
+    left: 32.5%;
+    position: fixed;
+    display:none;
+    font-size: 30px;
+    opacity: .3;
+}
