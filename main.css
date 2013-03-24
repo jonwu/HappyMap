@@ -1,3 +1,12 @@
+html{
+    overflow: auto;
+}
+body{
+    background: #e3fff6;
+    font-family:"Lucida Grande", Arial, serif;
+
+}
+
 .question{
 
 }
@@ -5,9 +14,9 @@
     color: darkgray;
     padding-top:15px;
     padding-left: 15px;
-    left: 21%;
-    top: 19%;
-    position: fixed;
+    left: 480px;
+    top: 120px;
+    position: absolute;
     font-size: 100px;
     width: 500px;
     color: #519ede;
@@ -18,12 +27,12 @@
     border:0px;
     width: 150px;
     height: 40px;
-    left: 36.5%;
-    top: 48%;
+    left: 700px;
+    top: 303px;
     font-weight: 900px;
     font-size:17px;
     background-color:transparent; /*important*/
-    position: fixed;
+    position: absolute;
     outline:none;
     color: white;
 
@@ -32,31 +41,25 @@
 #searchbar{
     width: 150px;
     height: 40px;
-    left: 600px;
-    top: 48%;
-    position: fixed;
+    left: 690px;
+    top: 303px;
+    position: absolute;
 }
 #search_enter{
-    left: 720px;
-    top: 49.5%;
-    position: fixed;
+    left: 804px;
+    top: 311px;
+    position: absolute;
 }
 
-body{
-    background: #e3fff6;
-    overflow: auto;
-    overflow-x: auto;
-    overflow-y: auto;
-}
+
 .emotion{
 
 }
 .emotion a{
 
-
-    width: 90px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    width: 100px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     font-weight: 900px;
     font-size: 18px;
 
@@ -73,9 +76,9 @@ body{
     border-radius: 50%;
     display: none;
 
-    top: 50%;
-    left: 45%;
-    position: fixed;
+    top: 295px;
+    left: 615px;
+    position: absolute;
     z-index: 1;
 
 }
@@ -136,21 +139,24 @@ body{
 }
 .sidebar li a{
     text-decoration: none;
-    list-style-type: none;
+    opacity: .5;
+    font-size: 14px;
 }
 #leadsTo{
-    top: 51.6%;
+    top: 52.5%;
     left: 53%;
-    position: fixed;
+    position: absolute;
     display: none;
     font-size: 30px;
     opacity: .3;
+    font-family:"Garamond", Georgia, serif
 }
 #comesFrom{
-    top: 51.6%;
-    left: 32.5%;
-    position: fixed;
+    top: 52.5%;
+    left: 33%;
+    position: absolute;
     display:none;
     font-size: 30px;
     opacity: .3;
+    font-family:"Garamond", Georgia, serif
 }

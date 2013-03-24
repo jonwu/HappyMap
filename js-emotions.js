@@ -105,7 +105,7 @@ function revealConnections(element){
         leadEle = document.getElementById(element.lead[i]);
 //        leadEle.style.backgroundColor = "green";
         leadEle.style.backgroundColor = bgColor;
-        leadEle.style.position = "fixed";
+        leadEle.style.position = "absolute";
         $(leadEle).css('display', 'block');
         $(leadEle).animate({ opacity: 0 }, 0);
 
@@ -167,7 +167,7 @@ function revealConnections(element){
         }
 //        leadEle.style.backgroundColor = "blue";
         leadEle.style.backgroundColor = bgColor;
-        leadEle.style.position = "fixed";
+        leadEle.style.position = "absolute";
         $(leadEle).css('display', 'block');
         $(leadEle).animate({ opacity: 0 }, 0);
         if(element.from.length == 1){
@@ -207,6 +207,8 @@ $(document).ready(function(){
     $('#search').keyup(function(){
 
         var search_term = $(this).val().toLowerCase();
+
+
         if(!isAnimated()){
             if(search_term!= "emotion"){
                 try{
@@ -214,6 +216,10 @@ $(document).ready(function(){
                     addElement(ele);
                     setCenter(ele);
                     currentEmo = search_term;
+                    $('#search').animate({opacity: 1, left:'600px', top: '100px'},{duration: 2000});
+                    $('#searchbar').animate({opacity: 1, left:'590px', top: '100px'},{duration: 2000});
+                    $('#search_enter').animate({opacity: 1, left:'710px', top: '110px'},{duration: 2000});
+                    $('#ask').fadeOut(2000);
                     $('#leadsTo').fadeIn(4000);
                     $('#comesFrom').fadeIn(4000);
                     previous = true;
@@ -235,7 +241,7 @@ $(document).ready(function(){
 function setCenter(ele){
     var element = document.getElementById(ele.name);
     element.style.opacity = "1";
-    element.style.position ="fixed";
+    element.style.position ="absolute";
 //    element.style.backgroundColor = "gray";
     element.style.top = "50%";
     element.style.left = "45%";
@@ -257,15 +263,15 @@ function refreshAll(){
             for(var i = 0; i < size; i++){
                 curElement = emotions.pop();
                 $(curElement).animate({ opacity: 0 }, 0);
-                $(curElement).css('top', '50%');
-                $(curElement).css('left', '45%');
+                $(curElement).css('top', '295px');
+                $(curElement).css('left', '615px');
             }
 
         });
 //        lastElement = emotion[i];
-    }
-    for(var i; i < tempEmoArray.length; i++){
-        tempEmoArray.pop();
+        for(var i; i < tempEmoArray.length; i++){
+            tempEmoArray.pop();
+        }
     }
 
     while(lineRecord.length !=0){
@@ -347,8 +353,8 @@ function connect(div1, div2, color, timer, n) {
 
     var a = $(div1),
         b = $(div2),
-        dW = b.offset().left+45 - (a.offset().left + 45),
-        dH = b.offset().top + 30 - (a.offset().top + 30),
+        dW = b.offset().left - (a.offset().left),
+        dH = b.offset().top - (a.offset().top),
         angle = Math.atan(dH / dW),
         length = Math.sqrt(dW * dW + dH * dH);
 
@@ -363,7 +369,7 @@ function connect(div1, div2, color, timer, n) {
     var element = document.getElementById(name);
     $(element).css({
         display: 'block',
-        top: a.offset().top + 30,
+        top: a.offset().top + 35,
         left: a.offset().left + 45,
         width: 0,
         '-webkit-transform': 'rotate(' + angle + 'rad)',
@@ -374,60 +380,6 @@ function connect(div1, div2, color, timer, n) {
 
     lineRecord.push(element);
 
-//    var off1 = getOffset(div1);
-//    var off2 = getOffset(div2);
-//    // bottom right
-//    var x1 = off1.left + off1.width + 43; //extra padding
-//    var y1 = off1.top + off1.height/2 + 20; //extra padding
-//    // top right
-//    var x2 = off2.left - 3;
-//    var y2 = off2.top + off2.height/2 + 20;
-//    // distance
-//    var length = Math.sqrt(((x2-x1) * (x2-x1)) + ((y2-y1) * (y2-y1)));
-//    var id = y2.toString();
-//    // center
-//    var cx = ((x1 + x2) / 2) - (length / 2);
-//    var cy = ((y1 + y2) / 2) - (thickness / 2);
-//    // angle
-//    var angle = Math.atan2((y1-y2),(x1-x2))*(180/Math.PI);
-//    // make hr
-//    var name = "line"+n;
-//
-//
-//    jQuery('<a/>', {
-//        id: name
-//    }).appendTo('.question');
-//    var element = document.getElementById(name);
-//    $(element).css('display','block');
-//    $(element).css('padding','0px');
-//    $(element).css('margin','0px');
-//    $(element).css('height',thickness + 'px');
-//    $(element).css('background-color',color);
-//    $(element).css('line-height','1px');
-//    $(element).css('position','absolute');
-//    $(element).css('left',cx + "px");
-//    $(element).css('top',cy + "px");
-//    $(element).css('width',0 + "px");
-//    $(element).css({ '-webkit-transform': 'rotate(' + angle + 'deg)'});
-//    $(element).css({ '-moz-transform': 'rotate(' + angle + 'deg)'});
-//    $(element).css({ '-o-transform': 'rotate(' + angle + 'deg)'});
-//    $(element).css({ '-ms-transform': 'rotate(' + angle + 'deg)'});
-//    $(element).css({ 'transform': 'rotate(' + angle + 'deg)'})
-//    $(element).stop().animate({
-//        width: length
-//    }, 1500);
-//
-//
-//    lineRecord.push(element);
-
-
-//    var htmlLine = "<div id = " + name + " style='padding:0px; margin:0px; height:" + thickness + "px; background-color:" + color + "; " +
-//        "line-height:1px; position:absolute; left:" + cx + "px; top:" + cy + "px; width:" + length + "px; -moz-transform:rotate(" + angle +
-//        "deg); -webkit-transform:rotate(" + angle + "deg); -o-transform:rotate(" + angle + "deg); -ms-transform:rotate(" + angle + "deg); " +
-//        "transform:rotate(" + angle + "deg);' />";
-    //
-
-//    document.body.innerHTML += htmlLine;
 }
 
 function getOffset( el ) {
