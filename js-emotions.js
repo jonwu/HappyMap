@@ -11,7 +11,7 @@ var bgColor = "#519ede";
 function toggle(element) {
 
     if(!isAnimated()){
-
+        
         var timer = 1000;
         var size = emotions.length;
         var lastEmo;
@@ -135,6 +135,8 @@ function revealConnections(element){
     var tempName;
     var isIdentical = 0;
     var leadEle;
+
+
     element.from.sort();
     for(var i = 0; i < element.from.length; i++){
         if(leftIsOdd == 1){
@@ -171,7 +173,8 @@ function revealConnections(element){
         $(leadEle).css('display', 'block');
         $(leadEle).animate({ opacity: 0 }, 0);
         if(element.from.length == 1){
-            $(leadEle).animate({opacity: 1, left: 25 + "%", top: leftVerInc + "%"},{duration: timer+=timerInc});$('#tempBubble').css({
+            $(leadEle).animate({opacity: 1, left: 25 + "%", top: leftVerInc + "%"},{duration: timer+=timerInc});
+            $('#tempBubble').css({
                 left: 25 + "%",
                 top: leftVerInc + "%"
             });
@@ -210,7 +213,7 @@ $(document).ready(function(){
 
 
         if(!isAnimated()){
-            if(search_term!= "emotion"){
+            if(search_term != "emotion"){
                 try{
                     var ele = eval(search_term);
                     addElement(ele);
@@ -285,11 +288,19 @@ function refreshAll(){
 
 
 function isAnimated(){
-    for(var i =0; i <emotion.length; i++){
-        if($("#"+emotion[i].name).is(':animated')){
+
+    $(".hover").each(function(){
+        if($(this).is(':animated')){
             return 1;
-        }
-    }
+        };
+    });
+//    for(var i =0; i <emotion.length; i++){
+//        if($("#"+emotion[i].name).is(':animated')){
+//            alert(emotion[i].name);
+//            return 1;
+//        }
+//    }
+
     return 0;
 }
 function addElement(ele){

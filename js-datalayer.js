@@ -1,11 +1,3 @@
-/**
- * Created with JetBrains WebStorm.
- * User: Jonathan Wu
- * Date: 2/21/13
- * Time: 12:41 AM
- * To change this template use File | Settings | File Templates.
- */
-
 var excitement = {
     name: "excitement",
     lead: [],
@@ -30,36 +22,68 @@ var fustration = {
     tooltip: "fustration_tip"
 }
 
+var hate = {
+    name: "hate",
+    lead: [""],
+    from: ["jealousy"],
+    description: "<b>Hate</b>: the emotion of hate; a feeling of dislike so strong that it demands action; verb dislike intensely; feel antipathy or aversion towards",
+    tooltip: "hate_tip"
+}
+
 var faith = {
     name: "faith",
-    lead: ["confidence"],
-    from: [],
-    description: "",
+    lead: ["confident"],
+    from: [""],
+    description: "<b>Faith</b>: loyalty or allegiance to a cause or a person; complete confidence in a person or plan etc",
     tooltip: "faith_tip"
+}
+
+var jealousy = {
+    name: "jealousy",
+    lead: ["sad","hate","regret"],
+    from: ["desperation"],
+    description: "<b>Jealousy</b>: zealous vigilance; a feeling of jealous envy (especially of a rival)",
+    tooltip: "jealousy_tip"
+}
+
+var sad = {
+    name: "sad",
+    lead: [],
+    from: ["jealousy"],
+    description: "<b>Sad</b>: experiencing or showing sorrow or unhappiness; of things that make you feel sad",
+    tooltip: "sad_tip"
 }
 
 var angry = {
     name: "angry",
     lead: ["fustration"],
     from: ["aggitation"],
-    description: "",
+    description: "<b>Angry</b>: feeling or showing anger; (of the elements) as if showing violent anger",
     tooltip: "angry_tip"
 }
 
 var happiness = {
     name: "happiness",
-    lead: ["excitement","positivity","confidence"],
-    from: ["love","positivity","confidence"],
+    lead: ["excitement","positivity","confident"],
+    from: ["love","positivity","confident"],
     description: "<b>Happiness</b>: emotions experienced when in a state of well-being; state of well-being characterized by emotions ranging from contentment to intense joy",
     tooltip: "happiness_tip"
 }
 
-var confidence = {
-    name: "confidence",
-    lead: ["happiness","successful"],
-    from: ["happiness","faith"],
-    description: "",
-    tooltip: "confidence_tip"
+var regret = {
+    name: "regret",
+    lead: [],
+    from: ["jealousy"],
+    description: "<b>Regret</b>: sadness associated with some wrong done or some disappointment; verb be sorry",
+    tooltip: "regret_tip"
+}
+
+var desperation = {
+    name: "desperation",
+    lead: ["jealousy"],
+    from: [],
+    description: "<b>Desperation</b>: desperate recklessness; a state in which everything seems wrong and will turn out badly",
+    tooltip: "desperation_tip"
 }
 
 var attraction = {
@@ -88,7 +112,7 @@ var admiration = {
 
 var love = {
     name: "love",
-    lead: ["affection","lust","longing"],
+    lead: ["affection","lust","longing","happiness"],
     from: ["attraction","admiration","care"],
     description: "<b>Love</b>: any object of warm affection or devotion; a deep feeling of sexual desire and attraction",
     tooltip: "love_tip"
@@ -102,6 +126,22 @@ var lust = {
     tooltip: "lust_tip"
 }
 
+var happy = {
+    name: "happy",
+    lead: [""],
+    from: [""],
+    description: "",
+    tooltip: "happy_tip"
+}
+
+var confident = {
+    name: "confident",
+    lead: ["happiness","successful"],
+    from: ["happiness","faith"],
+    description: "<b>Confident</b>: not liable to error in judgment or action; having or marked by confidence or assurance",
+    tooltip: "confident_tip"
+}
+
 var care = {
     name: "care",
     lead: ["love"],
@@ -113,14 +153,14 @@ var care = {
 var successful = {
     name: "successful",
     lead: [],
-    from: ["confidence"],
-    description: "",
+    from: ["confident"],
+    description: "<b>Successful</b>: having succeeded or being marked by a favorable outcome",
     tooltip: "successful_tip"
 }
 
 var longing = {
     name: "longing",
-    lead: [],
+    lead: [""],
     from: ["love"],
     description: "<b>Longing</b>: prolonged unfulfilled desire or need",
     tooltip: "longing_tip"
@@ -134,7 +174,7 @@ var aggitation = {
     tooltip: "aggitation_tip"
 }
 
-var emotion = [excitement, affection, fustration, faith, angry, happiness, confidence, attraction, positivity, admiration, love, lust, care, successful, longing, aggitation];
+var emotion = [excitement, affection, fustration, hate, faith, jealousy, sad, angry, happiness, regret, desperation, attraction, positivity, admiration, love, lust, happy, confident, care, successful, longing, aggitation];
 var emotions = new Array();
 var tempEmoArray = new Array();
 var lineRecord = new Array();

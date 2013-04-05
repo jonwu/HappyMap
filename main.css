@@ -11,10 +11,10 @@ body{
 
 }
 #ask{
-    color: darkgray;
+    /*color: darkgray;*/
     padding-top:15px;
     padding-left: 15px;
-    left: 480px;
+    left: 450px;
     top: 120px;
     position: absolute;
     font-size: 100px;
@@ -159,4 +159,9 @@ body{
     font-size: 30px;
     opacity: .3;
     font-family:"Garamond", Georgia, serif
+}
+.emotion_wrap{
+    width: 1350px;
+    height: 610px;
+    position: relative;
 }
